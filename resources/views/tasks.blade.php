@@ -11,16 +11,6 @@
 			<div class="box-header with-border">
 				<h3 class="box-title">Tasques</h3>
 			</div>
-			<form role="form" action="#">
-				<div class="box-body">
-					<div class="form-group">
-						<label for="name">Name</label>
-						<input type="text" class="form-control" id="name" placeholder="Escriu la tasca a crear"
-							   v-model="newTodo"
-							   @keyup.enter="addTodo">
-					</div>
-				</div>
-			</form>
 			<!-- /.box-header -->
 			<div class="box-body">
 				<table class="table table-bordered">
@@ -36,9 +26,9 @@
 					</thead>
 					<tbody>
 
-					@foreach ($tasks as $task)
-						<tr v-for="(todo, index) in filteredTodos">
-							<td class="active">#</td>
+					@foreach ($tasks as $key => $task)
+						<tr>
+							<td class="active">{{ $key +1 }}</td>
 							<td class="warning">{{$task->name}}</td>
 							<td class="danger">{{$task->priority}}</td>
 							<td class="success">{{$task->done}}</td>
