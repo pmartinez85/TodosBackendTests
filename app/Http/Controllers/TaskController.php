@@ -12,6 +12,9 @@ class TaskController extends Controller
 {
     public function index()
     {
+        return view('/tasks')->with('tasks', []);
+
+         // return ['tasca1', 'tasca2', 'tasca3'];
 
     }
 }
